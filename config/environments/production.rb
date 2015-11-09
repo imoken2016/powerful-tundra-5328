@@ -14,4 +14,6 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
   config.log_formatter = ::Logger::Formatter.new
   config.active_record.dump_schema_after_migration = false
+  # deviseの設定 
+  config.action_mailer.default_url_options = { host: 'powerful-tundra-5328.herokuapp.com' }
 end
