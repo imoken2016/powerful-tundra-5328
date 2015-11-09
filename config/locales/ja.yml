@@ -195,3 +195,5 @@ ja:
   attributes:
     name: 名前
     email: メールアドレス
+    title: タイトル
+    message: メッセージ

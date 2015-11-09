@@ -1,7 +1,11 @@
 class ContactsController < ApplicationController
 
   def index
-    @contact = Contact.new
+    if params[:back]
+      @contact = Contact.new(contact_params)
+    else
+      @contact = Contact.new()
+    end
   end
 
   def confirm
@@ -9,17 +13,22 @@ class ContactsController < ApplicationController
     if @contact.valid?
       render :action => 'confirm'
     else
+      @contact = Contact.new(contact_params)
       render :action => 'index'
     end
   end
 
   def thanks
     @contact = Contact.new(contact_params)
-    respond_to do |format|
-      if @contact.save
-        format.html { render :thanks }
-      else
-        format.html { render :index }
+    if params[:back]
+      render :action => 'index'
+    else
+      respond_to do |format|
+        if @contact.save
+          format.html { render :thanks }
+        else
+          format.html { render :index }
+        end
       end
     end
   end

@@ -23,3 +23,11 @@
   </table>
   <%= f.submit '送信', class: 'btn' %>
 <% end %>
+
+<%= form_for @contact, :url => contacts_path do |f| %>
+  <%= f.hidden_field :name %>
+  <%= f.hidden_field :email %>
+  <%= f.hidden_field :title %>
+  <%= f.hidden_field :message %>
+<%= f.submit '戻る', name: 'back' %>
+<% end %>
