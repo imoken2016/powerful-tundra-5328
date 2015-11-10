@@ -1,0 +1,11 @@
+applications:
+- path: .
+  memory: 256M
+  instances: 1
+  domain: eu-gb.mybluemix.net
+  name: achieve1111
+  host: achieve1111
+  disk_quota: 1024M
+  services:
+  - ElephantSQL-1y
+  command: bundle exec rake db:migrate && bundle exec rails s --port=$PORT
