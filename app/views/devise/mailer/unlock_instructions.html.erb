@@ -1,7 +1,15 @@
-<p>Hello <%= @resource.email %>!</p>
+<p>こんにちは。 <%= @resource.email %>さん</p>
 
-<p>Your account has been locked due to an excessive number of unsuccessful sign in attempts.</p>
+<p>いつもご利用いただき、誠にありがとうございます。</p>
 
-<p>Click the link below to unlock your account:</p>
+<p>ロックを解除するために、下記のURLをクリックしてください。</p>
 
-<p><%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token) %></p>
+
+<p><%= link_to 'ロックを解除する', unlock_url(@resource, unlock_token: @token) %></p>
+
+--------------------------------------------------------------------------------------------------------------
+
+
+<p>このメールに覚えがない場合は、誠に恐れ入りますが<br>
+以下までご連絡をいただいた上、メールを破棄して頂けますと幸いです。</p>
+<p>info@imoken.net</p>
