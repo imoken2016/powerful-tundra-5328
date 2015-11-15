@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  get 'users/index'
 
+  get 'users' => 'users#index'
   get 'users/show'
-
-  devise_for :user
+  devise_for :user, controllers: { 
+  sessions: "users/sessions", 
+  registrations: "users/registrations", 
+  passwords: "users/passwords",
+  omniauth_callbacks: "users/omniauth_callbacks" 
+  }
   resources :user, only: [:index, :show]
   root to: "top#index" 
   resources :blogs
