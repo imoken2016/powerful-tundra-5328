@@ -11,6 +11,7 @@
       <%= blog.content %><br />
       <em><%= blog.created_at %></em>
       <p><em>投稿者:<%= blog.user.name %></em></p>
+      <p><% if blog.user_id === @user.id %><%= link_to '編集', edit_blog_path(blog) %><% end %></p>
     </div>
   </div>
 <% end %>
