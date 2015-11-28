@@ -49,6 +49,11 @@ GEM
       railties (>= 3.1)
     builder (3.2.2)
     byebug (6.0.2)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -71,6 +76,10 @@ GEM
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hashie (3.4.3)
+    hirb (0.7.3)
+    hirb-unicode (0.0.5)
+      hirb (~> 0.5)
+      unicode-display_width (~> 0.1.1)
     i18n (0.7.0)
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
@@ -150,6 +159,7 @@ GEM
     ref (2.0.0)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
+    rmagick (2.15.4)
     sass (3.4.19)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -180,6 +190,7 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unicode-display_width (0.1.1)
     warden (1.2.3)
       rack (>= 1.0)
     web-console (2.2.1)
@@ -196,8 +207,11 @@ DEPENDENCIES
   bootstrap-sass (~> 3.2.0)
   bootstrap-social-rails
   byebug
+  carrierwave
   coffee-rails (~> 4.1.0)
   devise
+  hirb
+  hirb-unicode
   jbuilder (~> 2.0)
   jquery-rails
   omniauth
@@ -205,6 +219,7 @@ DEPENDENCIES
   omniauth-twitter
   pg
   rails (= 4.2.3)
+  rmagick
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

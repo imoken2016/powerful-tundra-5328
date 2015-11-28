@@ -1,6 +1,15 @@
-<h1>Editing Blog</h1>
+<div class="row">
+  <div class="col-sm-6 col-md-4 innerLR">
+    <% if @blog.user_id === @user.id %>
+      <h1>編集する</h1>
 
-<%= render 'form' %>
+      <%= render 'form' %>
 
-<%= link_to 'Show', @blog %> |
-<%= link_to 'Back', blogs_path %>
+      <%= link_to 'Show', @blog %> |
+      <%= link_to '戻る', blogs_path %>
+    <% else %>
+      <p>このページへのアクセスは出来ません。</p>
+      <%= link_to '戻る', blogs_path %>
+    <% end %>
+  </div>
+</div>

@@ -2,3 +2,34 @@
     max-width: 400px;
     margin: 0 auto;
 }
+
+.innerLR {
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+}
+.innerTB {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.innerAll {
+  padding: 20px;
+  position: relative;
+}
+.innerL {
+  padding-left: 20px;
+  position: relative;
+}
+.innerR {
+  padding-right: 20px;
+  position: relative;
+}
+.innerT {
+  padding-top: 20px;
+  position: relative;
+}
+.innerB {
+  padding-bottom: 20px;
+  position: relative;
+}

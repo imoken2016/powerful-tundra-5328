@@ -1,17 +1,20 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'New Blog', new_blog_path %>
-
-<% @blogs.each do |blog| %>
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title"><%= blog.title %></h3>
-    </div>
-    <div class="panel-body">
-      <%= blog.content %><br />
-      <em><%= blog.created_at %></em>
-      <p><em>投稿者:<%= blog.user.name %></em></p>
-      <p><% if blog.user_id === @user.id %><%= link_to '編集', edit_blog_path(blog) %><% end %></p>
-    </div>
+<div class="row">
+  <div class="col-sm-6 col-md-4 innerLR">
+    <p id="notice"><%= notice %></p>
+    <%= link_to 'ブログを新規登録する', new_blog_path %>
+    <% @blogs.each do |blog| %>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= blog.title %></h3>
+        </div>
+        <div class="panel-body">
+          <%= blog.content %><br />
+          <em><%= blog.created_at %></em>
+          <p><%= image_tag(@user.image_url, :size => "50x50", :alt => "アイコン") %></p>
+          <p><em>投稿者:<%= blog.user.name %></em></p>
+          <p><% if blog.user_id === @user.id %><%= link_to '編集', edit_blog_path(blog) %><% end %></p>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>

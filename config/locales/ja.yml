@@ -195,6 +195,7 @@ ja:
   attributes:
     name: 名前
     email: メールアドレス
+    image_url: 画像
     password: パスワード
     password_confirmation: パスワード確認
     current_password: 現在のパスワード

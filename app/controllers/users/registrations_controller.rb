@@ -5,4 +5,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super 
   end
   
+  private
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:image) }
+  end
+  
+  protected
+  def update_resource(resource, params)
+    resource.update_without_current_password(params)
+  end
+  
 end
