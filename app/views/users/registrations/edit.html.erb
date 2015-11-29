@@ -16,11 +16,7 @@
       <div class="field">
         <%= f.label :image_url %><br />
         <%= f.file_field :image %>
-        <% if @user.image? %>
-          <%= image_tag @user.image.thumb.url %>
-        <% else %>
-          <%= image_tag 'noimage.png' %>
-         <% end %>
+        <%= image_tag @user.image_path, :class=>["img-rounded"],:size => "100x100" %>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -37,19 +33,14 @@
         <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
       </div>
 
-      <div class="field">
-        <%= f.label :current_password %> <i>(パスワードを変更するときは、入力してください)</i><br />
-        <%= f.password_field :current_password, autocomplete: "off", :class => "form-control" %>
-      </div>
-
-      <div class="actions">
-        <%= f.submit "更新する" %>
+      <div class="actions innerTB">
+        <%= f.submit "更新する", :class => "btn btn-lg btn-primary btn-block" %>
       </div>
     <% end %>
 
     <h3>アカウントを削除する</h3>
 
-    <p><%= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "本当に削除しますか？" }, method: :delete %></p>
+    <p><%= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "本当に削除しますか？" }, method: :delete, :class => "btn btn-lg btn-block" %></p>
 
     <%= link_to "戻る", :back %>
   </div>

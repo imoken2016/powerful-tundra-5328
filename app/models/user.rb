@@ -7,6 +7,20 @@ class User < ActiveRecord::Base
   
   mount_uploader :image, ImageUploader
   
+  def image_path
+    begin
+      if self.image.thumb.url.present?
+        self.image.thumb.url
+      elsif self.image_url.present?
+        self.image_url
+      else
+        'noimage.png'
+      end
+    rescue Exception => ex
+      'noimage.png'
+    end
+  end
+  
   def update_without_current_password(params, *options)
     params.delete(:current_password)
 

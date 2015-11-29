@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-sm-6 col-md-4 innerLR">
     <p id="notice"><%= notice %></p>
-    <%= link_to 'ブログを新規登録する', new_blog_path %>
+    <%= link_to 'ブログを新規登録する', new_blog_path, :class => "btn btn-lg btn-block btn-primary" %><br />
     <% @blogs.each do |blog| %>
       <div class="panel panel-primary">
         <div class="panel-heading">
