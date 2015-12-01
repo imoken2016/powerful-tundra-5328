@@ -5,20 +5,16 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
   has_many :blogs, :dependent => :delete_all
   
-  mount_uploader :image, ImageUploader
+  mount_uploader :avatar, AvatarUploader
   
   def image_path
-    begin
-      if self.image.thumb.url.present?
-        self.image.thumb.url
-      elsif self.image_url.present?
-        self.image_url
+      if self.avatar.thumb.url.present?
+        self.avatar.thumb.url
+      elsif self.image.present?
+        self.image
       else
         'noimage.png'
       end
-    rescue Exception => ex
-      'noimage.png'
-    end
   end
   
   def update_without_current_password(params, *options)
@@ -41,7 +37,7 @@ class User < ActiveRecord::Base
                          provider: auth.provider,
                          uid: auth.uid, 
                          email: auth.info.email,
-                         image_url: auth.info.image,
+                         image: auth.info.image,
                          password: Devise.friendly_token[0,20],
                          confirmed_at: Time.now
                          ) 
@@ -56,7 +52,7 @@ class User < ActiveRecord::Base
                          provider: auth.provider,
                          uid: auth.uid,
                          email: User.create_unique_email,
-                         image_url: auth.info.image,
+                         image: auth.info.image,
                          password: Devise.friendly_token[0,20],
                          confirmed_at: Time.now
                          ) 
