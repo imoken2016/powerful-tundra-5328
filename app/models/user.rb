@@ -7,8 +7,6 @@ class User < ActiveRecord::Base
   
   mount_uploader :avatar, AvatarUploader
 
-  validates :email, presence: true
-
   def image_path
       if self.avatar.thumb.url.present?
         self.avatar.thumb.url
