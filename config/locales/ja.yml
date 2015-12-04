@@ -202,3 +202,4 @@ ja:
     title: タイトル
     message: メッセージ
     remember_me: ログイン情報を記憶する
+    confirmation_token: トークン
