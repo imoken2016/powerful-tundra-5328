@@ -6,7 +6,9 @@ class User < ActiveRecord::Base
   has_many :blogs, :dependent => :delete_all
   
   mount_uploader :avatar, AvatarUploader
-  
+
+  validates :email, presence: true
+
   def image_path
       if self.avatar.thumb.url.present?
         self.avatar.thumb.url
@@ -33,10 +35,12 @@ class User < ActiveRecord::Base
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil) 
     user = User.where(provider: auth.provider, uid: auth.uid).first
     unless user 
+    fb_email = auth.info.email.present? ? auth.info.email : User.create_unique_email
+
       user = User.create(name: auth.extra.raw_info.name, 
                          provider: auth.provider,
                          uid: auth.uid, 
-                         email: auth.info.email,
+                         email: fb_email,
                          image: auth.info.image,
                          password: Devise.friendly_token[0,20],
                          confirmed_at: Time.now
