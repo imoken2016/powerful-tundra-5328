@@ -5,8 +5,8 @@
       <div class="caption">
         <h3><%= user.name %></h3>
         <p><%= user.profile %></p>
-        <p><%= image_tag(user.image) %></p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        <p><%= image_tag(user.image_path, :size => "50x50", :alt => "アイコン", :class=>["img-rounded"]) %></p>
+        <p><a href="#" class="btn btn-primary" role="button">サンプルボタンA</a> <a href="#" class="btn btn-default" role="button">サンプルボタンB</a></p>
       </div>
     </div>
   </div>
