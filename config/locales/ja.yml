@@ -200,6 +200,7 @@ ja:
     password_confirmation: パスワード確認
     current_password: 現在のパスワード
     title: タイトル
+    content: 本文
     message: メッセージ
     remember_me: ログイン情報を記憶する
     confirmation_token: トークン

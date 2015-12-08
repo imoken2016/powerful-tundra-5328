@@ -1,14 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-sm-6 col-md-4 innerLR">
+    <p>
+      <strong>タイトル:</strong>
+      <%= @blog.title %>
+    </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</p>
+    <p>
+      <strong>本文:</strong>
+      <%= @blog.content %>
+    </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @blog.content %>
-</p>
-
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+    <%= link_to '編集する', edit_blog_path(@blog) %> |
+    <%= link_to '戻る', blogs_path %>
+  </div>
+</div>
