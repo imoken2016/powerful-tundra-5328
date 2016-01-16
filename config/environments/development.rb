@@ -41,5 +41,16 @@ Rails.application.configure do
 
   # deviseの設定 
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => 'smtp.gmail.com',
+    :user_name => ENV['GMAIL_USER_NAME'],
+    :password => ENV['GMAIL_PASSWORD'],
+    :authentcation => 'login',
+    }
+  
   BetterErrors::Middleware.allow_ip! '54.244.95.60'
 end

@@ -37,6 +37,8 @@
                 <li><%= link_to "ブログ一覧", blogs_path %></li>
                 <li><%= link_to "ユーザ一覧", users_path %></li>
                 <li role="separator" class="divider"></li>
+                <li><%= link_to "メール受信一覧", contacts_inbox_path %></li>
+                <li role="separator" class="divider"></li>
                 <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
               </ul>
             </li>
