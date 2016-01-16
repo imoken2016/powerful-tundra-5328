@@ -37,7 +37,7 @@ group :development, :test do
   gem "guard-rspec", require: false 
   gem "rack-mini-profiler"
   gem "spring-commands-rspec" 
-  #gem "xray-rails"
+  gem "xray-rails"
 end
 
 gem 'devise'
@@ -50,7 +50,7 @@ gem 'omniauth'
 gem 'omniauth-twitter' 
 gem 'omniauth-facebook'
 gem 'bootstrap-social-rails'
-
 gem 'carrierwave'
 gem 'rmagick'
+gem 'sprockets-rails', '2.3.3'
 gem 'dotenv-rails'
