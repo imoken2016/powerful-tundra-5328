@@ -27,7 +27,8 @@ class BlogsController < ApplicationController
   # POST /blogs
   # POST /blogs.json
   def create
-    @blog = Blog.new(blog_params)
+    #@blog = Blog.new(blog_params)
+    @blog = current_user.blogs.build(params[:blog].permit!)
     @user = current_user
     @blog.user_id = @user.id
 
@@ -73,7 +74,7 @@ class BlogsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def blog_params
-      params.require(:blog).permit(:title, :content)
-    end
+    #def blog_params
+    #  params.require(:blog).permit(:title, :content)
+    #end
 end
